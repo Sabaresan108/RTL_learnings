@@ -4,7 +4,7 @@ reg [7:0]MultiC,MultiP;
 reg clk , rst , start;
 wire [17:0] PR;
 
-FSM_multiplier uut ( clk, rst, start, MultiP, MultiC, PR);
+FSM_multiplier uut ( clk, rst, start, MultiC, MultiP, PR);
 
 initial
 begin
@@ -17,11 +17,11 @@ initial
 begin
 
 rst = 0;
-#10
-rst = 1;
-start = 1;
-MultiC = 8'b0000001;
+MultiC = 8'b00000000;
 MultiP = 8'b10000101;
+#10
+rst=1;
+start = 1;
 #60
 start=0;
 
