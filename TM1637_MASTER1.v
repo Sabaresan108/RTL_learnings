@@ -1,4 +1,3 @@
-
 module TM1637_MASTER1(input clk,rst, start, cmd1 ,
                       input [7:0] data_in,
                       input stop,
@@ -104,17 +103,20 @@ begin
                      if (~d_io)
                      begin
                         enable <= 1; 
-                        if(cmd1) 
-                        begin
-                            state <= STOP;
-                        end
-                        else 
-                        begin
-                            state   <= START;
-                        end 
                     end
                 end
-            end
+                else if(enable && count == 312)
+                begin
+                    if(cmd1) 
+                    begin
+                        state <= STOP;
+                    end
+                    else 
+                    begin
+                        state   <= START;
+                    end 
+                 end
+             end
             
             STOP:
             begin
@@ -122,7 +124,7 @@ begin
                 begin
                     d_out <= 1;
                 end
-                else if(count == 150 && d_clk == 1)
+                else if(count == 200 && d_clk == 1)
                 begin
                     state <= IDLE;
                     data_valid <= 1;
