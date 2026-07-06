@@ -4,6 +4,7 @@ module TM1637_CON (input clk,rst,
    			       output d_clk,
    			       output reg [3:0] LED);
 
+   
 reg [7:0] data_in;
 reg [1:0] state;
 reg [3:0] step; 
