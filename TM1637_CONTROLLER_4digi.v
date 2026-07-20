@@ -1,6 +1,7 @@
 module TM1637_CONTROLLER_4digi (input clk,rst, start_display,
    			                    inout d_io,
    			                    output d_clk);
+   
 
 reg [7:0] data_in;
 reg [1:0] state;
