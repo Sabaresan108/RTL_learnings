@@ -24,8 +24,6 @@ wire [7:0] segment_3;
 wire [7:0] segment_2;
 wire [7:0] segment_1;
 
-
-
 reg time_ready;
   
 reg [3:0] rtc_counter;
@@ -67,7 +65,7 @@ ila_0   uu3t (clk,uart_done,state,rtc_counter,rx_hrs ,global_counter , input_dat
 Number_set uut1 (rx_min [7:4], segment_4);
 Number_set uut2 (rx_min [3:0],segment_3);
 
-//Number_set uut3 ({2'b00 , rx_hrs [5:4]}, segment_2);
+	//Number_set uut3 ({2'b00 , rx_hrs [5:4]}, segment_2); // for hours
 //Number_set uut4 (rx_hrs [3:0], segment_1);
 
 Number_set uut3 (rx_sec [7:4], segment_2);
