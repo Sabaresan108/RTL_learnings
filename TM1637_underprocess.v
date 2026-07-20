@@ -20,7 +20,6 @@ parameter IDLE  = 2'b00,
           ACK   = 2'b10,
           STOP  = 2'b11;
 
-// Tri-state buffer control
 assign d_io = enable ? d_out : 1'bz;
 
 // Tell the controller when we are free!
