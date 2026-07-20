@@ -45,6 +45,7 @@ begin
                     end
 
                     START: 
+                       
                     begin
                          start <= 1; 
                     
