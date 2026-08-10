@@ -7,7 +7,7 @@ module DAC_sine_wave (input clk, rst,
 reg [7:0]  address     = 8'b1100_0010; // C2 (A0 tied to VDD)
 reg        ReadWrite   = 1'b0;         // 0 = Write, 1 = Read
 
-parameter Hertz_50 = 32'd17857; // Sample = 32 (140 x 50 = 7000 HZ)
+parameter Hertz_50 = 32'd17857; // Sample = 140 (140 x 50 = 7000 HZ)
 
 reg start;
 wire data_valid;
